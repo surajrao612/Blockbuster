@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Configuration.Annotations;
 using Blockbuster.Application.Interfaces;
 using Blockbuster.Application.Movies.TransferObjects;
 using Blockbuster.Domain.Entities;
@@ -121,7 +122,13 @@ public class MovieRetrievalService : IMovieRetrievalService
                 _ => new(),
             };
 
+            var titleFromCompetitor = await CompareWithProviderAsync(provider, response.Title);
 
+            if (titleFromCompetitor != null && !string.IsNullOrEmpty(titleFromCompetitor.Price) 
+                && titleFromCompetitor.Price?.ConvertToDecimal() < response.Price?.ConvertToDecimal())
+            {
+                return titleFromCompetitor;
+            }
 
         }
         catch (Exception ex)
@@ -133,5 +140,43 @@ public class MovieRetrievalService : IMovieRetrievalService
 
     }
 
+    private async Task<MovieInfo> CompareWithProviderAsync(MovieProvider provider, string title)
+    {
+        List<Movie> movies = [];
+        var providerToCompare = GetProviderToCompare(provider);
+
+        if (providerToCompare == MovieProvider.CinemaWorld)
+            movies = await _cinemaWorldService.GetAllMoviesAsync();
+
+        if (providerToCompare == MovieProvider.FilmWorld)
+            movies = await _filmWorldService.GetAllMoviesAsync();
+
+        var competitorMovie = movies.Where(x => x.Title.Equals(title, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+
+        if (competitorMovie == null)
+            return default;
+
+        var movieInfo = providerToCompare switch
+            {
+                MovieProvider.CinemaWorld => await _cinemaWorldService.GetMovieInfoAsync(competitorMovie.ID),
+                MovieProvider.FilmWorld => await _filmWorldService.GetMovieInfoAsync(competitorMovie.ID),
+                _ => new(),
+            };
+
+        return movieInfo;
+
+    }
+
+    private MovieProvider GetProviderToCompare(MovieProvider provider)
+    {
+        return provider switch
+        {
+            MovieProvider.CinemaWorld => MovieProvider.FilmWorld,
+            MovieProvider.FilmWorld => MovieProvider.CinemaWorld,
+            _ => provider,
+        };
+    }
+
+    
 
 }

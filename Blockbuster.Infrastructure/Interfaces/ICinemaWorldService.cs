@@ -11,5 +11,6 @@ public interface ICinemaWorldService
 {
     Task<List<Movie>> GetAllMoviesAsync();
 
+
     Task<MovieInfo> GetMovieInfoAsync(string id);
 }

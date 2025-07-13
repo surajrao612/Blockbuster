@@ -15,3 +15,9 @@ Following Concepts used:
 5) TDD and BDD using xUnit and SpecFlow
 6) Use Polly on Http
 7) Automapper for Data Transfer Objects
+
+
+Future Implentation:
+1) Pagination
+2) Improve on the caching to retrieve from cache using a session id to prevent current scenario,
+To stop retrieve all from competitor api again to find the price

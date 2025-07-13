@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blockbuster.API", "Blockbuster.API\Blockbuster.API.csproj", "{CC339661-BCD1-419D-A22C-83B406BB148F}"
 EndProject
@@ -18,6 +18,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blockbuster.Tests", "Blockbuster.Tests\Blockbuster.Tests.csproj", "{E46CF384-19CE-40AC-AC2B-D8FE562E21C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blockbuster.AcceptanceTests", "Blockbuster.AcceptanceTests\Blockbuster.AcceptanceTests.csproj", "{DEFE192C-0D2D-43B9-9519-A3C68F673DAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AB8983AA-6BEB-4533-BFC0-B5233E33B20F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
