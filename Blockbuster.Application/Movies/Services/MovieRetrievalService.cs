@@ -1,15 +1,9 @@
 ﻿using AutoMapper;
-using AutoMapper.Configuration.Annotations;
 using Blockbuster.Application.Interfaces;
 using Blockbuster.Application.Movies.TransferObjects;
 using Blockbuster.Domain.Entities;
 using Blockbuster.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Blockbuster.Domain.Enums.Enums;
 
 namespace Blockbuster.Application.Movies.Services;

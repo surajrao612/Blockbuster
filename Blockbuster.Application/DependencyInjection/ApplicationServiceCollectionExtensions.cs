@@ -1,14 +1,8 @@
 ﻿using Blockbuster.Application.Interfaces;
 using Blockbuster.Application.Mapper;
 using Blockbuster.Application.Movies.Services;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blockbuster.Application.DependencyInjection;
 

@@ -21,3 +21,9 @@ Future Implentation:
 1) Pagination
 2) Improve on the caching to retrieve from cache using a session id to prevent current scenario,
 To stop retrieve all from competitor api again to find the price
+
+## FrontEnd
+
+Front end application called blockbuster-app
+
+Created using React+Vite with bootstrap
