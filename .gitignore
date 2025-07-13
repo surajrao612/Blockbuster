@@ -1,0 +1,13 @@
+﻿.vs
+Blockbuster.AcceptanceTests/bin
+Blockbuster.AcceptanceTests/obj
+Blockbuster.API/bin
+Blockbuster.API/obj
+Blockbuster.Application/bin
+Blockbuster.Application/obj
+Blockbuster.Domain/bin
+Blockbuster.Domain/obj
+Blockbuster.Infrastructure/bin
+Blockbuster.Infrastructure/obj
+Blockbuster.Tests/bin
+Blockbuster.Tests/obj
